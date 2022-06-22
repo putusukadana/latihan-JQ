@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>latihan 04 hitung luas bangun </title>
+</head>
+<body>
+    <button class="tiga">hitung segitiga</button>
+    <button  id="persegi">hitung persegi</button>
+
+    <div id="ltiga">
+        <h3>hitung luas segitiga</h3>
+        <div>alas</div>
+        <input type="number" class="a" id="alas">
+        <div>tinggi</div>
+        <input type="number" class="t" id="tinggi">
+        <div><button class="hitsegitiga">hitung</button></div>
+        <div>hasil</div>
+        <input type="number"class="h3" disabled>
+        
+    </div>
+
+    <div id="lpers">
+        <h3>hitung luas persegi</h3>
+        <div>sisi 1</div>
+        <input type="number" class="s1">
+        <div>sisi 2</div>
+        <input type="number" class="s2">
+        <div><button class="hitpersegi">hitung</button></div>
+        <div>hasil</div>
+        <input type="number"class="hpers" disabled>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        
+    $(function(){
+
+        $("#lpers").hide();
+        $("#ltiga").hide();
+
+
+        $(".tiga").click(function(){
+            $("#ltiga").show(2000);
+            $("#lpers").hide(1000);
+        });
+
+        $("#persegi").click(function(){
+            $("#ltiga").hide(2000);
+            $("#lpers").show(1000);
+        });
+
+        $(".hitsegitiga").click(function(){
+            let a = $("#alas").val();
+            let t = $("#tinggi").val();
+            let hitsegitiga = 1/2 * a * t ; 
+            $(".h3").val(hitsegitiga);
+        })
+
+        $(".hitsegitiga").click(function(){
+            let a = $("#alas").val();
+            let t = $("#tinggi").val();
+            let hitsegitiga = 1/2 * a * t ; 
+            $(".h3").val(hitsegitiga);
+        })
+    })
+    </script>
+</body>
+</html>

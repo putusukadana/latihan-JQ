@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery latihann</title>
+</head>
+<body>
+    <h3>konten 1</h3>
+    <div id="konten"></div>
+    <h3>konten 2</h3>
+    <div id="konten2"></div>
+    <h3>konten 3</h3>
+    <div class="konten3"></div>
+
+    <!-- menggunakan natif js -->
+    <script>
+        document.getElementById("konten").innerHTML="isi konten";
+    </script>
+
+    <!-- menggunakan jquery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(function(){
+            $("#konten2").html("isi dari konten 2");
+        })
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $(".konten3").html("isi dari konten 3");
+        })
+    </script>
+</body>
+</html>

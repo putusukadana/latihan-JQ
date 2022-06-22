@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>latihan 03</title>
+</head>
+<body>
+    <h3>konversi suhu</h3>
+    <div>celcuis</div>
+    <input type="text" class="c">
+
+    <div>farenhite</div>
+    <input type="text" class="f">
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            let c=0
+            let f=0
+            //c->f =>9/5*c+32
+            $(".c").change(function(){
+                c = $('.c').val();
+                f = 9/5 * c + 32;
+                $(".f").val(f);
+            })
+            //f->c =>5/9*(f-32)
+            $(".f").change(function(){
+                f = $(".f").val();
+                c = 5/9 * (f - 32);
+                $(".c").val(c);
+            })
+        })
+    </script>
+</body>
+</html>

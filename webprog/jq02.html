@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>lth 02</title>
+</head>
+<body>
+    <!-- menyembunyikan isi konten 1 dengan STYLE -->
+    <style>
+        .isikonten1{
+            display: none;
+        }
+    </style>
+    <!-- nav -->
+    <button class="konten1">Konten 1</button>
+    <button class="konten2">Konten 2</button>
+    <select id="spilih">
+        <option selected="selected">pilih konten</option>
+        <option value="k1">konten1</option>
+        <option value="k2">konten2</option>
+    </select>
+    <!-- isi konten -->
+    <div class="isikonten1">
+        <h3>isi konten 1</h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+         Ipsum odit quidem voluptatibus dolor inventore doloremque,
+         aliquid cupiditate error quasi autem,
+         eveniet necessitatibus animi est aliquam?
+    </div>
+
+    <div class="isikonten2">
+        <h3>isi konten 2</h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+         Ipsum odit quidem voluptatibus dolor inventore doloremque,
+         aliquid cupiditate error quasi autem,
+         eveniet necessitatibus animi est aliquam?
+    </div>
+    <!-- jq -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(".konten1").click(function() {  //"click" sebagai perintah
+                $(".isikonten1").show(5000); //menyembunyikan 
+                $(".isikonten2").hide(2000); //menampilkan 
+            });
+       
+            $(".isikonten2").hide();
+
+            $(".konten2").click(function() {
+                $(".isikonten2").show(5000);
+                $(".isikonten1").hide(2000);
+            });
+
+            // select konten
+            $("#spilih").change(function(){
+                let npilih = $("#spilih").val();
+                // console.log(npilih)
+                switch(npilih){
+                    case "k1":
+                        $(".isikonten1").show(1000);
+                        $(".isikonten2").hide(2000);
+                         break;
+                    case "k2":
+                        $(".isikonten2").show(1000);
+                        $(".isikonten1").hide(2000);
+                        break;
+                    default:
+                        $(".isikonten1").hide(2000);
+                        $(".isikonten2").hide(2000);
+                        break;
+
+                }
+            })
+        })
+    </script>
+</body>
+</html>
